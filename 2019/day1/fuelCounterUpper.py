@@ -3,6 +3,8 @@
 """
 from math import trunc
 import sys
+from util import readNewLine
+
 def countFuel(mass):
     return trunc(mass/3) - 2
 
