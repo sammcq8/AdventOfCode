@@ -13,12 +13,19 @@ def fileread(filename):
             arr.append(int(line.strip()))
     return arr
 
+def moreFuel(mass):
+    fuel = countFuel(mass)
+    if fuel <=0:
+        return 0
+    else:
+        return fuel + moreFuel(fuel)
+
 def main():
     filename = sys.argv[1]
     arr = fileread(filename)
     sum = 0
     for item in arr:
-        sum += countFuel(item)
+        sum += moreFuel(item)
     print(sum)
 
 if __name__ == "__main__":
